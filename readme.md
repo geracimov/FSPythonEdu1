@@ -12,7 +12,22 @@ TopVerbs
 
 ## Как запускать
 Основная функция для запуска get_top_verbs_in_path2
-Параметры для запуска: Путь, макс количество самых используемых глаголов, список подкаталогов
+Параметры для запуска: Путь, расширение файлов, макс количество самых используемых глаголов, список подкаталогов
 
 ## Примеры
-`topverbs.get_top_verbs_in_path2("c:\\1\\1\\1", 32, ("sdfsdfsd", "sdfsdfsdf3", "sdfsdfsdf5", "sdfsdfsdf7"))`
+* запуск по 1 каталогу: `get_verbs_in_path(path, extension)`
+`topverbs.get_verbs_in_path('c:\\temp','.py')`
+
+* запуск по списку каталогов: `get_verbs_in_paths(paths, extension)`
+`topverbs.get_verbs_in_path(['c:\\temp','c:\\temp2'],'.py')`
+
+* печать статистики по группе каталогов: `verbs_in_paths_print_stats(PATHS, EXTENSION, MAX_COUNT)`
+`verbs_in_paths_print_stats(['c:\\temp','c:\\temp2'], '.py', 2)`
+
+вывод:
+`total 33 words, 3 unique
+do 25
+get 6`
+
+* запуск из консоли
+`c:\temp .py 2 django flask pyramid reddit requests sqlalchemy`
