@@ -4,8 +4,9 @@ from nltk import pos_tag
 def is_verb(word):
     if not word:
         return False
+    nltk_verbs = ['VB', 'VBD']
     pos_info = pos_tag([word])
-    return pos_info[0][1] == 'VB'
+    return nltk_verbs.__contains__(pos_info[0][1])
 
 
 def get_verbs_from_function_name(function_name):
